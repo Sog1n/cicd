@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f98f67d8-21fb-412b-a33a-9edf98e738e5" name="Changes" comment="update cors">
-      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,10 @@
     "url": "https://github.com/Sog1n/cicd.git",
     "accountId": "fa63e46b-47ac-4aaa-9498-b6798fef02f9"
   }
+}]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
 }]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
@@ -68,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1761495083117</updated>
-      <workItem from="1761495084591" duration="2722000" />
+      <workItem from="1761495084591" duration="3775000" />
     </task>
     <task id="LOCAL-00001" summary="update link">
       <option name="closed" value="true" />
@@ -102,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761497538297</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update cors">
+      <option name="closed" value="true" />
+      <created>1761498221241</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761498221241</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
