@@ -28,6 +28,16 @@ const allowedOrigins = [
     "http://localhost:3000"
 ];
 
+app.get('/', (req, res) => {
+    res.status(200).json({ status: 'OK', message: 'Server is running' });
+});
+
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'healthy',
+        timestamp: new Date().toISOString()
+    });
+});
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
@@ -44,9 +54,7 @@ app.use(cors({
 app.use(cookieParser());
 
 // Health check endpoint cho Railway
-app.get('/', (req, res) => {
-    res.status(200).json({ status: 'OK', message: 'Server is running' });
-});
+
 
 // Proxy setup
 app.use('/api/nominatim', createProxyMiddleware({
