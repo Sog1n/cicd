@@ -38,9 +38,18 @@ app.get('/health', (req, res) => {
         timestamp: new Date().toISOString()
     });
 });
+// CORS configuration cho production
 app.use(cors({
     origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        // Cho phép requests không có origin (mobile apps, curl, etc.)
+        if (!origin) return callback(null, true);
+
+        // Kiểm tra origin
+        const isVercelDomain = origin.includes('vercel.app');
+        const isLocalhost = origin.includes('localhost');
+        const isAllowedDomain = origin === 'https://cicd-ashen.vercel.app';
+
+        if (isVercelDomain || isLocalhost || isAllowedDomain) {
             callback(null, true);
         } else {
             callback(new Error('Not allowed by CORS'));
@@ -50,7 +59,6 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
-
 app.use(cookieParser());
 
 // Health check endpoint cho Railway
