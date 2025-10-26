@@ -13,20 +13,40 @@ import addressRoutes from './routes/AddressRoutes.js';
 import orderRoutes from './routes/OrderRoutes.js';
 import MapAddressRoutes from './routes/MapAddressRoutes.js'
 import DroneRoutes from "./routes/DroneRoutes.js";
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
+
+// CORS configuration cho production
+const allowedOrigins = [
+    "https://cicd-ashen.vercel.app",
+    "http://localhost:5173", // cho local development
+    "http://localhost:3000"
+];
+
 app.use(cors({
-    origin: "https://cicd-ashen.vercel.app",
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 app.use(cookieParser());
+
+// Health check endpoint cho Railway
+app.get('/', (req, res) => {
+    res.status(200).json({ status: 'OK', message: 'Server is running' });
+});
 
 // Proxy setup
 app.use('/api/nominatim', createProxyMiddleware({
@@ -55,6 +75,8 @@ app.use("/api/drones", DroneRoutes);
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("MongoDB connected");
-        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`Server running on port ${PORT}`);
+        });
     })
     .catch((error) => console.error("MongoDB connection error:", error));

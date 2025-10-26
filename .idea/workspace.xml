@@ -73,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1761495083117</updated>
-      <workItem from="1761495084591" duration="3896000" />
+      <workItem from="1761495084591" duration="4227000" />
     </task>
     <task id="LOCAL-00001" summary="update link">
       <option name="closed" value="true" />
@@ -123,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761498909853</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update cors">
+      <option name="closed" value="true" />
+      <created>1761499013610</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761499013610</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
