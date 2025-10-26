@@ -17,33 +17,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const allowedOrigins = [
-    "https://cicd-ashen.vercel.app",
-    "https://cicd-l3sva8o46-sog1ns-projects.vercel.app",
-    process.env.FRONTEND_URL
-].filter(Boolean);
 
-const corsOptions = {
-    origin: (origin, cb) => {
-        if (!origin) return cb(null, true); // non-browser clients
-        try {
-            const host = new URL(origin).host;
-            const ok =
-                allowedOrigins.includes(origin) ||
-                /\.vercel\.app$/i.test(host); // allow Vercel previews
-            return ok ? cb(null, true) : cb(new Error("Not allowed by CORS"));
-        } catch {
-            return cb(new Error("Bad origin"));
-        }
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-};
-
-app.use(cors(corsOptions));
-// ensure preflight is answered
-app.options("*", cors(corsOptions));
 app.use(express.json());
 app.use(cors({
     origin: "https://cicd-ashen.vercel.app",
