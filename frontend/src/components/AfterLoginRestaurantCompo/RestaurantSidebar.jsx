@@ -11,7 +11,7 @@ const RestaurantSidebar = () => {
   const navigate = useNavigate();
   axios.defaults.withCredentials = true
   const handleLogout = () => {
-    axios.get('http://localhost:3000/auth/logout') // Corrected URL
+    axios.get('https://cicd-production-6388.up.railway.app/auth/logout') // Corrected URL
       .then(res => {
         if (res.data.status) {
           localStorage.removeItem('restautantId');

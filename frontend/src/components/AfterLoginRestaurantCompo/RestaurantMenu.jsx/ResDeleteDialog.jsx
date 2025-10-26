@@ -16,7 +16,7 @@ console.log(delId);
     const handleDelete = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:3000/api/menu/DeleteMenu/${delId}`, {
+            const response = await fetch(`https://cicd-production-6388.up.railway.app/api/menu/DeleteMenu/${delId}`, {
                 method: "DELETE",
                 credentials: 'include'
             });

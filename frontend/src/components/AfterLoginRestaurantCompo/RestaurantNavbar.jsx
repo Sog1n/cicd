@@ -7,7 +7,7 @@ const RestaurantNavbar = () => {
     const updateStatus = async (status, resId) => {
         try {            
             const body = { status };
-            const response = await fetch(`http://localhost:3000/auth/updateStatus/${resId}`, {
+            const response = await fetch(`https://cicd-production-6388.up.railway.app/auth/updateStatus/${resId}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body),

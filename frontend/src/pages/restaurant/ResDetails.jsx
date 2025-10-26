@@ -17,7 +17,7 @@ const Details = ({ restaurantId }) => {
 
     const callResDetails = async () => {
         try {
-            const res = await fetch('http://localhost:3000/auth/RestaurantLayout/ResDetails', {
+            const res = await fetch('https://cicd-production-6388.up.railway.app/auth/RestaurantLayout/ResDetails', {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -57,7 +57,7 @@ const Details = ({ restaurantId }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:3000/auth/updateDetails/${restaurantId}`, {
+            const response = await fetch(`https://cicd-production-6388.up.railway.app/auth/updateDetails/${restaurantId}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

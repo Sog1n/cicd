@@ -30,7 +30,7 @@ const ResLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.post("http://localhost:3000/auth/ResLogin", {
+      const response = await Axios.post("https://cicd-production-6388.up.railway.app/auth/ResLogin", {
         email,
         password,
       });

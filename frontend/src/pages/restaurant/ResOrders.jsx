@@ -10,7 +10,7 @@ const CurrentOrder = ({ currentOrders, getOrders }) => {
     //Update order status
     const updateOrderStatus = async (orderId, newstatus) => {
         try {
-            const res = await axios.put(`http://localhost:3000/api/order/updateOrder/${orderId}`,
+            const res = await axios.put(`https://cicd-production-6388.up.railway.app/api/order/updateOrder/${orderId}`,
                 {
                     orderStatus: newstatus
                 },
@@ -164,7 +164,7 @@ const ResOrders = () => {
 
     const getOrders = async () => {
         try {
-            const res = await axios.get(`http://localhost:3000/api/order/getOrdersByResId/${resId}`,
+            const res = await axios.get(`https://cicd-production-6388.up.railway.app/api/order/getOrdersByResId/${resId}`,
                 {
                     withCredentials: true,
                 }

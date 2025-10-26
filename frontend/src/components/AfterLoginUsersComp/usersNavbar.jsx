@@ -13,7 +13,7 @@ const Navbar = ({ likedCount }) => {
 
   const callUserDashboard = async () => {
     try {
-      const res = await fetch('http://localhost:3000/auth/UsersRestaurant', {
+      const res = await fetch('https://cicd-production-6388.up.railway.app/auth/UsersRestaurant', {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -54,7 +54,7 @@ const Navbar = ({ likedCount }) => {
   }, []);
 
   const handleLogout = () => {
-    axios.get('http://localhost:3000/auth/UserLogout')
+    axios.get('https://cicd-production-6388.up.railway.app/auth/UserLogout')
       .then(res => {
         if (res.data.status) {
           localStorage.removeItem("userId");

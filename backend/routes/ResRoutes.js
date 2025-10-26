@@ -94,7 +94,7 @@ We received a request to reset your FoodieBuddy password. If you made this reque
 
 If you didn't request a password reset, please ignore this email or let us know.
 
-http://localhost:5173/ResResetPassword/${token}
+https://cicd-ashen.vercel.app/ResResetPassword/${token}
 
 Thank you for being a part of the FoodieBuddy community!
 

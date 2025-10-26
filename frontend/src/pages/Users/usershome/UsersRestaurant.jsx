@@ -29,7 +29,7 @@ const UsersRestaurant = () => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/auth/Restaurants', {
+        const response = await axios.get('https://cicd-production-6388.up.railway.app/auth/Restaurants', {
           withCredentials: true,
           headers: {
             Accept: 'application/json',

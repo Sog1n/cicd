@@ -13,7 +13,7 @@ function ResDashboard() {
 
   const callResDashboard = async () => {
     try {
-      const res = await fetch('http://localhost:3000/auth/RestaurantLayout/ResDashBoard', { // Update with the correct backend URL and port
+      const res = await fetch('https://cicd-production-6388.up.railway.app/auth/RestaurantLayout/ResDashBoard', { // Update with the correct backend URL and port
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -41,7 +41,7 @@ function ResDashboard() {
 
   const getOrders = async () => {
     try {
-        const res = await axios.get(`http://localhost:3000/api/order/getOrdersByResId/${resId}`,
+        const res = await axios.get(`https://cicd-production-6388.up.railway.app/api/order/getOrdersByResId/${resId}`,
             {
                 withCredentials: true,
             }
@@ -54,7 +54,7 @@ function ResDashboard() {
 }
 
 useEffect(() => {
-  axios.get('http://localhost:3000/api/menu/ResMenu')
+  axios.get('https://cicd-production-6388.up.railway.app/api/menu/ResMenu')
     .then(result => setMenuItems(result.data))
     .catch(err => console.log(err));
 }, []);

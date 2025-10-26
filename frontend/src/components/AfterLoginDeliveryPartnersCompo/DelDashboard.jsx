@@ -16,7 +16,7 @@ const CurrentOrder = ({ orders, getOrders }) => {
   //Update order status
   const updateOrderStatus = async (orderId) => {
     try {
-      const res = await axios.put(`http://localhost:3000/api/order/updateOrderStatus/${orderId}`,
+      const res = await axios.put(`https://cicd-production-6388.up.railway.app/api/order/updateOrderStatus/${orderId}`,
         {
           orderStatus: 'Delivered'
         },
@@ -215,7 +215,7 @@ const DelDashboard = () => {
 
   const getOrders = async (delId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/order/getAllAcceptedOrders`, {
+      const response = await axios.get(`https://cicd-production-6388.up.railway.app/api/order/getAllAcceptedOrders`, {
         withCredentials: true,
       });
       console.log(delId);
@@ -231,7 +231,7 @@ const DelDashboard = () => {
   const callDelDashboard = async () => {
 
     try {
-      const res = await fetch('http://localhost:3000/auth/DelLayout/DelDashboard', { // Update with the correct backend URL and port
+      const res = await fetch('https://cicd-production-6388.up.railway.app/auth/DelLayout/DelDashboard', { // Update with the correct backend URL and port
         method: "GET",
         headers: {
           Accept: "application/json",

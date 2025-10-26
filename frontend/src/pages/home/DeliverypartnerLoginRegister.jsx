@@ -36,7 +36,7 @@ const DeliverypartnerLoginRegister = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.post("http://localhost:3000/auth/delivery/register", {
+      const response = await Axios.post("https://cicd-production-6388.up.railway.app/auth/delivery/register", {
         drivingLicenceNo,
         ownerName,
         password,

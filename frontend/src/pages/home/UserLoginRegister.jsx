@@ -31,7 +31,7 @@ const UserLoginRegister = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.post("http://localhost:3000/auth/user/register", {
+      const response = await Axios.post("https://cicd-production-6388.up.railway.app/auth/user/register", {
         ownerName,
         password,
         phone,

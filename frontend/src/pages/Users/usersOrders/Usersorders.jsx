@@ -39,7 +39,7 @@ const [orders, setOrders] = useState([]);
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/order/getOrdersByUserId`,
+      const response = await axios.get(`https://cicd-production-6388.up.railway.app/api/order/getOrdersByUserId`,
         {withCredentials: true
 
         });

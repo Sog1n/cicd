@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:3000', // Adjust the port if necessary
+      '/api': 'https://cicd-production-6388.up.railway.app', // Adjust the port if necessary
     },
   },
 });

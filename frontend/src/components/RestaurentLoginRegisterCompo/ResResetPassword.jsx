@@ -27,7 +27,7 @@ const ResResetPassword = () => {
   const handlePasswordReset = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.post("http://localhost:3000/auth/ResResetPassword/"+token, {
+      const response = await Axios.post("https://cicd-production-6388.up.railway.app/auth/ResResetPassword/"+token, {
         password,
       });
 
